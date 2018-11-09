@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-3">
+    <h2>{{ course?.id }}</h2>
+  </div>
+  <div class="col-6">
+    <h2>{{ course?.name | titlecase }}</h2>
+  </div>
+  <div class="col-3">
+    <h2>{{ course?.max_grade }}</h2>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12 text-center">
+    <h4>
+      Students in this Course
+    </h4>
+  </div>
+</div>
+<div class="row">
+  <div class="col-12">
+    <div class="row header">
+      <div class="col-3">
+        ID
+      </div>
+      <div class="col-6 text-center">
+        Student Name
+      </div>
+      <div class="col-3">
+        Grade
+      </div>
+    </div>
+    <div class="row student" *ngFor="let student of course?.students">
+      <div class="col-3">
+        {{student.id}}
+      </div>
+      <div class="col-6 text-center">
+         <a class="link" routerLink="/students/{{student.id}}">
+         {{student.name}}
+        </a>
+      </div>
+      <div class="col-3">
+         {{student.grade}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,7 @@
+.delete > *, .edit > *{
+    font-size: 2rem;
+}
+
+.edit > *{
+    color: black;
+}

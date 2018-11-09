@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand link brand" routerLink="/">SIS</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link link" routerLink="/students">
+          <button mat-button>Students</button>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link link" routerLink="/courses">
+          <button mat-button>Courses</button>
+        </a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <mat-form-field>
+        <input matInput placeholder="Search" (keyup)="search($event.target.value)">
+      </mat-form-field>
+      <div class="row results" *ngIf="searchResults">
+        <div class="col-12"> 
+          <div class="row" *ngFor="let course of searchResults">
+            <div class="col-12">
+              <div class="card text-center">
+                <div class="card-body">
+                  <a class="link" routerLink="/courses/{{ course.id }}">
+                    <p>{{ course.name }}</p>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</nav>
+
+<main>
+  <div class="row">
+    <div class="col-10 offset-1">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>All Rights Reserved &reg;</p>
+</footer>

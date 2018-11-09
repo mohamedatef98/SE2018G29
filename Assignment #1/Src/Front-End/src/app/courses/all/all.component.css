@@ -1,0 +1,15 @@
+button{
+    min-width: 1%;
+    max-width: 100%;
+}
+
+.delete{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.delete > *{
+    font-size: 20px;
+    color: #ccc;
+}

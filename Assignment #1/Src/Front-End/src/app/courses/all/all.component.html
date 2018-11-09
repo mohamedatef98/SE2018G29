@@ -1,0 +1,38 @@
+<div class="row justify-content-center align-items-center">
+  <div 
+  class="card text-center" 
+  style="width: 14rem; margin: 0.5rem; display: relative" 
+  *ngFor="let course of courses">
+    <div class="card-body">
+      <a class="link delete" (click)="deleteCourse(course?.id)">
+        <mat-icon>cancel</mat-icon>
+      </a>
+      <h5 class="card-title">{{ course?.name | titlecase }}</h5>
+      <p class="card-text">
+        {{ course?.students_count > 0 ? course?.students_count : 'No' }} students Participated
+      </p>
+      <a class="card-link link" routerLink="{{ course?.id }}">
+        <button mat-raised-button color="primary">Visit {{ course?.name | titlecase }}</button>
+      </a>
+    </div>
+  </div>
+  <div class="card text-center" style="width: 14rem; margin: 0.5rem">
+    <div class="card-body">
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+        <div class="card-title">
+          <mat-form-field>
+            <input type="text" placeholder="Name" matInput name="name" ngModel required>
+          </mat-form-field>
+        </div>
+        <div class="card-text">
+          <mat-form-field>
+            <input type="number" placeholder="Max. Grade" matInput name="max_grade" ngModel required>
+          </mat-form-field>
+        </div>
+        <button [disabled]="!f.valid" type="submit" mat-raised-button color="warn">
+          <mat-icon>add</mat-icon>
+        </button>
+      </form>
+    </div>
+  </div>
+</div>

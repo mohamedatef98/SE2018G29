@@ -1,0 +1,37 @@
+<div class="row align-items-center">
+  <div class="col-2">
+    <h6>{{ student?.id }}</h6>
+  </div>
+  <div class="col-6">
+    <h4>{{ student?.name | titlecase }}</h4>
+  </div>
+  <div class="col-2">
+    <a class="link edit" routerLink="edit">
+      <mat-icon>edit</mat-icon>
+    </a>
+  </div>
+  <div class="col-2">
+    <a class="link delete" (click)="deleteStudent()">
+      <mat-icon>cancel</mat-icon>
+    </a>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-12">
+    <div class="row justify-content-center">
+      <div 
+      class="card text-center" 
+      style="width: 14rem; margin: 0.5rem" 
+      *ngFor="let course of student?.courses">
+        <div class="card-body">
+          <h5 class="card-title">{{ course.name | titlecase }}</h5>
+          <p class="card-text">Scored {{ course.grade }} out of {{ course.max_grade }}</p>
+          <a class="card-link link" routerLink="/courses/{{ course.id }}">
+            <button mat-raised-button color="primary">Visit {{ course.name | titlecase }}</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

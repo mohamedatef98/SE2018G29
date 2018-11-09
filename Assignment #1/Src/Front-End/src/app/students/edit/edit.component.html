@@ -1,0 +1,67 @@
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
+  <div class="row align-items-center">
+    <div class="col-2">
+      <h6>{{ student?.id }}</h6>
+    </div>
+    <div class="col-8 name text-center">
+      <mat-form-field>
+        <input type="text" matInput name="name" formControlName="name" required>
+      </mat-form-field>
+    </div>
+    <div class="col-2">
+      <a class="link save">
+        <button 
+        type="submit" 
+        [disabled]="!form.valid" 
+        mat-raised-button color="primary">
+          <mat-icon>save</mat-icon>
+      </button>
+      </a>
+    </div>
+  </div>
+  <hr>
+  <div class="row" formArrayName="courses">
+    <div class="col-12">
+      <div class="row justify-content-center">
+      <div 
+        class="card text-center course" 
+        style="width: 14rem; margin: 0.5rem; display: relative" 
+        *ngFor="let courseGroup of studentCourses.controls; let i = index"
+        [formGroupName]="i"
+         @fadeIn @fadeOut>
+          <div class="card-body">
+            <a class="link delete" (click)="deleteCourse(i)">
+              <mat-icon>cancel</mat-icon>
+            </a>
+            <mat-form-field>
+              <mat-select placeholder="Course" formControlName="id" required>
+                <mat-option 
+                [value]="course.id"
+                *ngFor="let course of courses">{{course?.name}}</mat-option>
+              </mat-select>
+              <mat-error *ngIf="courseGroup?.controls['id']?.hasError('required')">
+                Required
+              </mat-error>
+              <mat-error *ngIf="courseGroup?.controls['id']?.hasError('duplicate')">
+                Duplicate
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input type="number" matInput formControlName="grade" placeholder="Grade" required>
+              <mat-error *ngIf="courseGroup?.controls['grade']?.hasError('required')">
+                              Required
+                            </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12 text-center add">
+          <button type="button" matInput mat-raised-button (click)="addCourse()">
+            <mat-icon>add</mat-icon>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

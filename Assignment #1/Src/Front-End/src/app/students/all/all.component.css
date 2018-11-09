@@ -1,0 +1,49 @@
+.student{
+    padding: 0.5rem 0;
+    margin: 0.2rem 0;
+    border-bottom: 1px solid #ccc;
+    display: grid;
+
+    grid-template-areas: "id name buttons";
+    grid-row-gap: 15px;
+}
+
+.student:last-child{
+    border-bottom: 0;
+}
+
+.id{
+    grid-area: id;
+}
+
+.name{
+    grid-area: name;
+}
+
+.buttons{
+    grid-area: buttons;
+    justify-self: end;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+button{
+    min-width: 1%;
+    margin: 0 0.5rem;
+}
+
+.add{
+    margin-top: 1rem;
+}
+
+@media (max-width: 30rem){
+    .student{
+        grid-template-areas: "id name"
+                             "buttons buttons";
+    }
+
+    .buttons{
+        justify-self: center;
+    }
+}

@@ -1,0 +1,51 @@
+nav, main, footer{
+    width: 100%;
+}
+
+nav{
+    color: black;
+}
+
+form{
+    position: relative;
+}
+
+.results{
+    position: absolute;
+    top: 80%;
+    right: 0;
+    width: 150%
+}
+
+.results .card{
+    background-color: white;
+}
+
+.results .card-body{
+    padding: 0.2rem;
+}
+
+.results p{
+    margin: 0;
+}
+
+main{
+    margin-top: 3rem;
+    padding-bottom: 2rem;
+}
+
+main >.row{
+    margin: 0;
+}
+
+form > a{
+    margin: 0 0.5rem;
+}
+
+footer{
+    margin-top: auto;
+    text-align: center;
+    padding: 0.5rem;
+    background-color: #ccc;
+    border-radius: 5px;
+}

@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html, body{
+    height: 100%;
+}
+
+.link{
+    cursor: pointer;
+}
+
+.delete > *{
+    transition: color 0.2s ease-in-out;
+}
+
+.delete:hover > *{
+    color: red !important;
+}
+
+.edit > *{
+    transition: color 0.2s ease-in-out;
+}
+
+.edit:hover > *{
+    color: rgb(0, 255, 0) !important;
+}

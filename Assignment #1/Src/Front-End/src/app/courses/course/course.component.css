@@ -1,0 +1,10 @@
+.header, .student{
+    padding: 0.5rem;
+    /* border-bottom: 1px solid #ccc; */
+    box-shadow: 2px 2px 2px #ccc;
+    margin: 0.7rem 0;
+}
+
+.header{
+    background-color: #ccc;
+}

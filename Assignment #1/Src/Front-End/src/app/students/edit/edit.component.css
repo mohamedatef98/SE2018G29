@@ -1,0 +1,30 @@
+.course{
+    border: 1px solid rgba(0, 0, 255, 0.5);
+}
+
+.course.ng-invalid.ng-touched{
+    border-color: rgba(255, 0, 0, 0.5);
+}
+
+.save > *{
+    min-width: 1%;
+}
+
+.name > *{
+    width: 80%;
+}
+
+.add > * {
+    min-width: 1%;
+}
+
+.delete{
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+}
+
+.delete > *{
+    font-size: 20px;
+    color: #ccc;
+}
