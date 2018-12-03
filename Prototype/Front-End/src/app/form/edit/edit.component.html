@@ -1,0 +1,74 @@
+<form (ngSubmit)="onSubmit()">
+    <div class="container-fluid">
+        <div class="row" [formGroup]="form">
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-8">
+                  <div class="row" *ngIf="id">
+                    <div class="col-12">
+                      <div class="row justify-content-center">
+                       <div class="text-center">
+                        <h6>Link To Submissions</h6>
+                        <p><a href="/submit/{{id}}">/submit/{{id}}</a></p>
+                       </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                      <input type="text" matInput placeholder="Form Name" formControlName="name">
+                    </mat-form-field>
+                  </div>
+                  <div class="row">
+                    <mat-form-field>
+                      <textarea matInput placeholder="Form Description" formControlName="description"></textarea>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-12" formArrayName="form">
+                  <app-dynamic-control-view
+                  *ngFor="let control of $any(form.get('form')).controls; let i = index"
+                  [control]="control"
+                  [id]="i"
+                  [form]="form"
+                  (deleted)="delete($event)"
+                  @fadeIn @fadeOut [formGroupName]="i">
+                  </app-dynamic-control-view>
+                </div>
+              </div>
+            </div>
+            <div class="col-10 offset-1 text-center">
+                <div class="row align-items-center box">
+                    <div class="col-3">
+                        <p>Select Control</p>
+                    </div>
+                    <div class="col-5">
+                        <mat-form-field>
+                            <mat-select #d placeholder="Control Type" name="select" value="input">
+                                <mat-option
+                                *ngFor="let control of availableControls"
+                                [value]="control.control">
+                                    {{control.control | titlecase}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                    <div class="col-4">
+                        <div class="row" style="justify-content: space-evenly">
+                            <button mat-flat-button color="warn" type="button"
+                            (click)="pushControl(d.value)">
+                                <mat-icon>add</mat-icon>
+                            </button>
+                            <button
+                            type="submit"
+                            mat-raised-button color="primary"
+                            [disabled]="!form.valid">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
