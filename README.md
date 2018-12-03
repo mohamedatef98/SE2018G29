@@ -1,6 +1,12 @@
 # SE2018G29
 CSE 2018 SW Engineering Project
 
+#Online links
+
+Assignment #1  A live version is available https://sis-sw.herokuapp.com/
+
+Prototype A live version is available http://prototype-forms.herokuapp.com/
+
 # Team Members:
 Mohamed Atef Abdulsamie Mohamed (Team Leader) (SEC: 3).
 
