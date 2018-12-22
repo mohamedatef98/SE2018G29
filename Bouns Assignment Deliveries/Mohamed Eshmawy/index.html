@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Book Cover</title>
+		<link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+		<link rel="stylesheet" href="bootstrap.css">
+		<link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+	</head>
+
+	<body>
+	
+		<nav class="navbar navbar-light bg-light">
+		  <a class="navbar-brand" href="#">
+			Book Cover Generator
+		  </a>
+		</nav>
+		
+		
+		
+		
+		<div class="container-fluid" style="margin:8px">
+			<div class="row">
+				<div class="col-6">
+					<form>
+						<div class="form-group row">
+							<label for="bookTitle" style="padding:0.5rem" class="col-sm-4 col-form-label">Title</label>
+							<div class="col-sm-8">
+								<input type="text" value="Title" name="bookTitle" class="form-control" id="bookTitle" placeholder="Enter Book Title">
+							</div>
+						</div>
+					
+						<div class="form-group row">
+							<label for="bookSubtitle" style="padding:0.5rem" class="col-sm-4 col-form-label">Subtitle</label>
+							<div class="col-sm-8">
+								<input type="text" value="Subtitle" name="bookSubtitle" class="form-control" id="bookSubtitle" placeholder="Enter Book Subtitle">
+							</div>
+						</div>
+						
+						<div class="form-group row">
+							<label for="author" style="padding:0.5rem" class="col-sm-4 col-form-label">Author Name</label>
+							<div class="col-sm-8">
+								<input type="text" value="Author" name="author" class="form-control" id="author" placeholder="Enter Book Author">
+							</div>
+						</div>
+
+						<div class="form-group row">
+							<label for="backgroundColor" style="padding:0.5rem" class="col-sm-4 col-form-label">Background Color</label>
+							<div class="col-sm-8">
+								<input type="color" value="#ff9999" name="backgroundColor" class="form-control" id="backgroundColor">
+							</div>
+						</div>
+
+						<div class="form-group row" style="margin-top:40px">
+							<label for="publisher" style="padding:0.5rem" class="col-sm-4 col-form-label">Publisher</label>
+							<div class="col-sm-8">
+								<input type="text" value="publisher" name="publisher" class="form-control" id="publisher" placeholder="Enter Book Publisher">
+							</div>
+						</div>
+
+						<div class="form-group row" >
+							<label for="month" style="padding:0.5rem" class="col-sm-4 col-form-label">Publishing year</label>
+							<div class="col-sm-8">
+								<input type="month" name="month" class="form-control" id="month">
+							</div>
+						</div>	
+
+						
+							<button type="button" class="btn btn-primary">Generate</button>
+					</form>
+				</div>
+
+				<div class="col-6 justify-content-center">
+					<div class="row">
+					<div class ="col-2"></div>
+						<div class="col-8 cover-container">
+							<div><h1>Book Title</h1></div>
+							<div><h2>Book Subtitle</h2></div>
+							
+							<div><h3>by</h3></div>
+							<div><h4>Book Author</h4></div>
+							
+							<div><h5>Published by Publisher</h5></div>
+							<div><h6>Month/Year</h5></div>
+						</div>
+					<div class ="col-2"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script>
+		$(".btn").click(function()
+		{
+			$(".cover-container").fadeOut('slow', function() 
+			{
+				$("h1").text($("#bookTitle").val());
+				$("h2").text($("#bookSubtitle").val());
+				$("h4").text($("#author").val());
+				$(".cover-container").css("background-color",$("#backgroundColor").val());
+				
+				$("h5").text("Published by "+$("#publisher").val());
+				$("h6").text($("#month").val());
+				
+				$(".cover-container").fadeIn(1000);
+			});
+		});
+	</script>
+
+</html>
