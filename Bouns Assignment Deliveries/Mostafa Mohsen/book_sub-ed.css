@@ -1,0 +1,123 @@
+*{box-sizing:border-box;}
+html, body,.container-fluid {
+  height: 100%;
+}
+body{
+	background-image: url(https://www.nypl.org/sites/default/files/library_0.jpg);
+    
+    height: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.left-page{
+  opacity: 1;
+  display : inline-block;
+  justify-content : center;
+  align-items : center;
+  /*background-color:#3d231b;*/
+  height : 100%;
+  color : #FFF;
+  margin:0px;
+  width: 49%;
+}
+.right-page{
+  opacity: 1;
+  display : inline-block;
+  justify-content : center;
+  align-items : center;
+  background-color:#FFF;
+  height : auto;
+  color : #3d231b;
+  width: 50%;
+  transform: translate(-0%, -120%);
+}
+
+
+.Main-header{
+	opacity: 0.9;
+	text-align: center;
+	color: aquamarine;
+}
+.Main-header:hover{
+	opacity: 1;
+	
+}
+.Main-item{
+ 
+  margin: 8px;
+  padding: 3px;
+  border-style: solid;
+  border-color: white;
+  border-radius: 10px;
+  float: right;
+  background-color:#3d231b;  
+}
+.generate:hover{
+	background-color: rgba(111,111,111,0.6);
+	cursor:pointer; 
+
+}
+.generate{
+	clear: right;
+	float: right;
+    text-align: center;
+}
+#pb .generate{
+	text-align: center;
+
+}
+.Main-item input{
+	margin: 8px;
+	text-align: center;
+	color: blue;
+	clear: right;
+	font-family:'Nunito', serif;
+	float: right;
+	width: 250px;
+	display: inline-block;
+}
+/*.Main-item p{
+	display: inline-block;
+    float: left;
+    clear: left;
+    width: 150px;
+    text-align: left;
+}*/
+@media (max-width: 1200px) { 
+  .left-page{
+    height:50%
+  }
+  .right-page{
+    height:50%
+  }
+}
+#forum-item{
+	height: auto;
+}
+#for-color{
+	border-style: solid;
+	border-radius: 8px;
+	background-color:rgba(111,111,111,0.6) ;
+	
+}
+.book-span{
+	height: inherit;
+}
+.book-content{
+  justify-content : center;
+  align-items : center;
+  text-align: center;
+  margin: 5px;
+  height: inherit;
+}
+.Main-footer{
+  text-align: center;
+  opacity: 0.9;
+  background-color:#000;
+  color : #FFF;
+  height:100%
+}.Main-footer:hover{
+	opacity: 1;
+	background-color: rgba(111,111,111,0.6);
+}

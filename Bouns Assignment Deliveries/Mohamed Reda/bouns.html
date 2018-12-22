@@ -1,0 +1,79 @@
+<!doctype html>
+<head>
+    <title>Book Cover</title>
+    <meta charset="utf-8">
+    <style>
+        .normal{
+            margin : 20px; padding : 10px;
+            text-align:center; 
+            display : inline-block;
+            font-size: 30px;
+            border : 1px solid black;
+            width:20%;
+            background-color :rgb(0,255,255);
+        }
+        .square{
+            position:absolute;left: 700px;
+            top: 70px;
+            border:3px solid black;
+            width:40%;
+            padding:45px;
+            padding-bottom:300px;
+        }
+    </style>
+</head>
+<body>
+    <header style ="background : black; color : white; padding:10px;">cover designer </header>
+    <div>
+        <p class="normal">book title</p>
+        <input type='text' name = 'name' id = 'title' style = "width:20%;padding : 15px;background-color:rgb(0,255,255);" >
+        <br>
+        <p class="normal">book subtitle</p>
+        <input type='text' name = 'name' id = 'subtitle' style = "width:20%;padding : 15px;background-color:rgb(0,255,255);" >
+        <br>
+        <p class="normal">author name</p>
+        <input type='text' name = 'name' id = 'author' style = "width:20%;padding : 15px;background-color:rgb(0,255,255);" >
+        <br>
+        <p class="normal">background color</p>
+        <input type='text' name = 'name' id = 'background_color' style = "width:20%;padding : 15px;background-color:rgb(0,255,255);" >
+        <br>
+        <p class="normal">publisher</p>
+        <input type='text' name = 'name' id = 'publisher' style = "width:20%;padding : 15px;background-color:rgb(0,255,255);" >
+        <br>
+        <p class="normal">Publishing year</p>
+        <select name = 'name' id = 'year'style = "width:22%;padding : 15px;background-color:rgb(0,255,255);">
+            <option value ='2018'>2018</option>
+            <option value ='2017'>2017</option>
+            <option value ='2016'>2016</option>
+            <option value ='2015'>2015</option>
+        </select>
+        <br>    
+        <input onclick ="myFunction()" type="submit" value = "Generate" style="width:20%;padding : 15px;background-color:rgb(0,255,255);margin-left:200px;">
+    </div>
+    <div class="square">
+        <p  id="titlee" style = "font-size:70px;text-align:center;"></p>
+        <p  id="subtitlee" style = "font-size:60px;text-align:center;"></p>
+        <p  id="authorr" style = "font-size:50px;text-align:center;"></p>
+        <p  id="background_colorr" style = "font-size:40px;text-align:center;"></p>
+        <p  id="publisherr" style = "font-size:30px;text-align:center;"></p>
+        <p  id="yearr" style = "font-size:2 0px;text-align:center;"></p>
+    </div>
+    <script>
+        function myFunction() {
+        var title = document.getElementById("title").value;
+        var subtitle = document.getElementById("subtitle").value;
+        var author = document.getElementById("author").value;
+        var background_color = document.getElementById("background_color").value;
+        var publisher = document.getElementById("publisher").value;
+        var year = document.getElementById("year").value;
+
+        document.getElementById("titlee").innerHTML = title;
+        document.getElementById("subtitlee").innerHTML =subtitle;
+        document.getElementById("authorr").innerHTML =author;
+        document.getElementById("background_colorr").innerHTML =background_color;
+        document.getElementById("publisherr").innerHTML =publisher;
+        document.getElementById("yearr").innerHTML =year;
+        }
+</script> 
+    </body>
+</html>

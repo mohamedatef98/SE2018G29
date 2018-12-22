@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Book Store</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:bold,bolditalic">
+    <link rel="stylesheet" type="text/css" href="book_sub-ed.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="book_sub-ed.js"></script>
+</head>
+<body>
+    <header class="Main-header">
+        <div>
+            <h1>Welcome to our Book store styles</h1>
+        </div>
+
+    </header>
+    <div class="container-fluid">
+        <div class=" left-page">
+            <div class="Main-item">
+                <form id="forum-item">
+                    <p>Book Title :</p>
+                    <input id="book_title" type="text" name="Book Title" /><br/>
+                    <p>Book Subtitle :</p>
+                    <input id="book_sub" type="text" name="Book Subtitle" /><br />
+                    <p>Author Name :</p>
+                    <input id="author" type="text" name="Author Name" /><br />
+                    <p>Background color :</p>
+                    <input id="back_color" type="text" name="Background color" /><br />
+                    <p>Publisher :</p>
+                    <input id="pub" type="text" name="Publisher"/><br />
+                    <p>Publishing year :</p>
+                    <input id="pub_year" type="month" name="Publishing year" /><br />
+                </form>
+                <button class="generate" onclick="get_book_values(),set_book_values(),set_color()" >Generate</button>
+            </div>
+        </div>
+        <div class=" right-page">
+            <div class="book-span">
+                <div class="book-content" id="for-color">
+                <h1 id="new-title"> blank content</h1>     <!-- should have the values in javaScript file-->    
+                <div>
+                    <h3 id="new-sub"> blank content</h3>
+                </div>
+                <div>
+                    <h4 id="new-author">blank content</h4>    <!--color is totally css here and in JS-->
+                </div>
+                <div>
+                    <p id="new-pub">blank content</p>
+                </div>
+                
+                <div>
+                    <p id="new-pub-year">blank content</p>
+                </div>
+               </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      
+     function set_color() {
+        var x= document.getElementById("back_color").value;
+        document.getElementById("for-color").style.backgroundColor = x;
+}
+</script>
+    <footer class="Main-footer">
+        <div>
+            <p>All rights reerved © Mostafa Mohsen </p>
+
+        </div>
+    </footer>
+</body>
+</html>
