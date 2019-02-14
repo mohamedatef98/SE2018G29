@@ -1,0 +1,11 @@
+<nav>
+  <div class="brand" routerLink="{{loggedIn ? '/home' : '/'}}">Forms</div>
+
+  <div class="items">
+    <div class="item" routerLink="/login" *ngIf="!loggedIn">Login</div>
+    <div class="item" routerLink="/signup" *ngIf="!loggedIn">Signup</div>
+    <div class="item" (click)="logout($event)" *ngIf="loggedIn">Logout</div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>

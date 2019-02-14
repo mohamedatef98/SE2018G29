@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-10">
+      <div class="row text-center"><h1>Login !</h1></div>
+      <form #f="ngForm" (ngSubmit)="submit(f)">
+        <div class="row">
+          <mat-form-field>
+            <input type="text" matInput placeholder="Email" required email name="email" ngModel>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field>
+            <input type="password" matInput placeholder="Password" required name="password" ngModel>
+          </mat-form-field>
+        </div>
+        <div class="row justify-content-around">
+          <button type="submit" mat-raised-button color="primary" [disabled]="f.invalid">Login</button>
+          <button type="button" mat-raised-button routerLink="/signup">SignUp</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

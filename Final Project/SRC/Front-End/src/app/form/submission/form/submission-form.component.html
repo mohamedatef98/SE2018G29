@@ -1,0 +1,20 @@
+<div class="row">
+    <h2>{{ formTemplate.name }}</h2>
+</div>
+<div class="row">
+    <p>{{ formTemplate.description }}</p>
+</div>
+<form (ngSubmit)="submit()" [formGroup]="form">
+    <div class="row" *ngFor="let control of mapArray(form.controls); let i = index">
+        <div class="col-12">
+            <app-dynamic-control-real
+            [control]="form.controls[control]"
+            [form]="form"
+            [template]="formTemplate.form[i]">
+            </app-dynamic-control-real>
+        </div>
+    </div>
+    <div class="row justify-content-around">
+        <button type="submit" [disabled]="!form.valid || !canSubmit" mat-raised-button color="primary">Submit</button>
+    </div>
+</form>

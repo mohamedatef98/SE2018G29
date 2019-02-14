@@ -1,0 +1,33 @@
+nav{
+  display: flex;
+  width: 100%;
+  background-color: #484848;
+  color: white;
+  justify-content: space-between;
+  padding: 0.2rem 1rem;
+  align-items: center;
+  height: 4rem;
+  font-weight: bold;
+  margin-bottom: 3rem;
+}
+
+nav .brand, nav .item{
+  cursor: pointer;
+}
+
+.brand{
+  font-size: 2rem;
+}
+
+.brand:hover{
+  color: #ccc;
+}
+
+.items{
+  display: flex;
+  justify-content: space-between;
+}
+
+.item{
+  margin: 0 0.5rem;
+}

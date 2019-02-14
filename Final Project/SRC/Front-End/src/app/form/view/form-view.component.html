@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row justify-content-center text-center">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+    <div class="col-10" *ngIf="!loading">
+      <div class="row">
+        <div class="col-6">
+          <h3>{{ this.form.name }}</h3>
+          <h6>{{ this.form.description }}</h6>
+          <a href="/submit/{{form.id}}">Link To Submit</a>
+        </div>
+        <div class="col-6">
+          <div class="row">
+            <div class="col-6">
+              <button mat-fab color="primary" routerLink="submissions">Submission</button>
+            </div>
+            <div class="col-6">
+              <button mat-fab routerLink="edit">Edit</button>
+            </div>
+          </div>
+          <div class="row justify-content-center">
+            <button mat-fab color="warning" (click)="deleteForm(form.id)">Delete</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="border: 5px solid black; border-radius: 10px; padding: 2rem">
+        <app-submission-form [canSubmit]="false"></app-submission-form>
+      </div>
+    </div>
+  </div>
+</div>

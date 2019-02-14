@@ -1,0 +1,38 @@
+<div class="row">
+    <div class="col-12 text-center">
+        <h3>Welcome To Forms</h3>
+        <h6>Create New Form <a routerLink="/create"><button mat-button color="primary">Now !</button></a></h6>
+    </div>
+</div>
+<div class="row justify-content-center">
+    <div class="card text-center" style="width: 18rem; margin: 0.5rem; background-color: rgba(0, 0, 0, 0.25)" *ngFor="let form of forms">
+        <div class="card-body">
+          <h5 class="card-title"><a routerLink="/{{form.id}}">{{form.name}}</a></h5>
+          <h6 class="card-subtitle mb-2 text-muted">{{form.description}}</h6>
+          <div class="row justify-content-center">
+            <!--<a class="card-link">-->
+                <!--<button mat-button color="primary" routerLink="{{form.id}}/edit">-->
+                    <!--<mat-icon>edit</mat-icon>-->
+                <!--</button>-->
+              <!--</a>-->
+              <a class="card-link">
+                <button mat-button color="warn" (click)="delete(form.id)">
+                    <mat-icon>delete</mat-icon>
+                </button>
+              </a>
+            </div>
+            <div class="row justify-content-center">
+                <a class="card-link" href="/submit/{{form.id}}">
+                    <button mat-button color="primary" >
+                        Submit
+                    </button>
+                </a>
+                <a class="card-link" routerLink="/{{form.id}}/submissions">
+                    <button mat-button >
+                        Submissions
+                    </button>
+                </a>
+          </div>
+        </div>
+    </div>
+</div>
