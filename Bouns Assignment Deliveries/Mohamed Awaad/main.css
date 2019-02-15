@@ -1,0 +1,46 @@
+.cover
+{
+    display: inline-block;
+    margin: 30px;
+    text-align:center;
+	
+
+    
+    
+    
+}
+
+
+
+.form
+{
+    display: inline-block;
+   
+    
+    
+    
+}
+
+.cover1
+{
+    	border:groove;
+	border-radius:10px;
+    background-color:green;
+    margin: 30px;
+    width:300px;
+}
+
+.label
+{
+    background-color: #87CEEB;
+display: inline-block;
+
+  
+    margin: 10px;
+    
+}
+
+.btn
+{
+    background-color:  #87CEEB;
+}

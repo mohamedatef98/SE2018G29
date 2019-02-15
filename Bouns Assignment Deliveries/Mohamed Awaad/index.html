@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+    
+        
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="main.css">
+		<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+    
+    </head>
+    <body>
+        <div class="form" >
+    
+    <form name="book" >
+       <div class="label"> <label>Book title</label> </div>
+         <input style="background-color:  #00FFFF;" id="bookTitle" type="text"><br> 
+        <div class="label">  <label class="label" >Book subtitle</label>  </div>
+         <input style="background-color:  #00FFFF;" id="bookSubtitle" type="text"><br> 
+      <div class="label">   <label class= "label" >Author name</label>  </div>
+         <input style="background-color:  #00FFFF;" id="author" type="text"><br>
+           <div class="label"> <label class= "label" >Background color</label>  </div>
+          <input style="background-color:  #00FFFF;" id="backgroundColor" type="color"><br> 
+   <div class="label">  <label class= "label" >publisher</label>  </div>
+          <input style="background-color:  #00FFFF;" id="publisher" type="text"><br> 
+         <div class="label"> <label class= "label" >publishing year</label>  </div>
+          <select style="background-color:  #00FFFF;" name="year"> s
+            <option>1990</option>
+            <option>1995</option>
+            <option>2000</option>
+        </select><br>
+          <input class="btn" type="button" value="generate">
+      </div>
+        <div class="cover">
+           <div class="cover1" >
+            <h1>BOOK TITLE</h1>
+            <h2>SUBTITLE</h2>
+            <h3>Author name</h3>
+            <h4>publisher</h4>
+            <h5>YEAR</h5>
+           </div>
+            
+            
+            
+        </div>
+        
+        
+    </form>
+    
+    </body>
+	
+	
+	<script>
+		$(".btn").click(function()
+		{
+				$("h1").text($("#bookTitle").val());
+				$("h2").text($("#bookSubtitle").val());
+				$("h3").text($("#author").val());
+				$(".cover1").css("background-color",$("#backgroundColor").val());
+				
+				$("h4").text("Published by "+$("#publisher").val());
+				$("h5").text($("select").val());
+		});
+	</script>
+	
+</html>
