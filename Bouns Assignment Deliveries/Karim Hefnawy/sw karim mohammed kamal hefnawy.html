@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="ie=edge">
+            <title>bookcovering</title>
+            <link href="https://fonts.googleapis.com/css?family=Anton" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+            <link rel="stylesheet" href="bonuse.css">
+    </head>
+    <body class="bod">
+            <div><p class="header1"> <br> Your cover  </p></div>
+            <div class="sec1">   
+                <div class="a">
+                  <p> Book name </p>
+                </div>
+                <div class="a">
+                  <input type="text" id="title">
+                </div>
+                <div class="a">
+                  <p> Book subtitle </p>
+                </div>
+                <div class="a">
+                  <input type="text" id="subtitle">
+                </div>
+                <div class="a"><p> Author name </p></div>
+                <div class="a">
+                  <input type="text" id="name">
+                </div>
+                <div class="a"><p> Background color </p></div>
+                <div class="a"><form >
+                    <input list="colors" id="color">
+                    <datalist id="colors">
+                      <option value="red">
+                      <option value="blue">
+                      <option value="yellow">
+                      <option value="green">
+                    </datalist>
+                  </form></div>
+                <div class="a"><p> Publisher </p></div>
+                <div class="a">
+                  <input type="text" id="puplisher">
+                </div>
+                <div class="a"><p> Year </p></div>
+                <div class="a"><form >
+                    <input list="years" id="year">
+                    <datalist id="years">
+                      <option value="2018">
+                      <option value="2019">
+                    </datalist>
+                  </form></div>
+                <div class="b">
+                    <button class="er" type="button">Generate</button>
+                </div>
+
+            </div>
+            <div class="sec2">
+                    <div class="ba"><p id="b"></p></div>
+                    <div class="ba"><p id="f"></p></div>
+                    <div class="mar"><p id="g"></p></div>
+                    <div class="bd"><p class="ss">Written by :</p></div>
+                    <div class="bd"><p id="c"></p></div>
+                    <div class="bd"><p class="ss">published by :</p></div>
+                    <div class="bd"><p id="d"></p></div>         
+            </div>
+            
+            <script src="code.js"></script>
+    </body>
+</html>
