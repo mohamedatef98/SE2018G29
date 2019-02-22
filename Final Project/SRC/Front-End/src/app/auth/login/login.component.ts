@@ -30,7 +30,7 @@ export class LoginComponent{
       (err)=>{
         console.log(err)
         this.pnotify.notify.next({type: 'error', PnotifyObject: {
-            text: JSON.stringify(err),
+            text: JSON.stringify(err.error.message),
             delay: 2000
           }})
       }
